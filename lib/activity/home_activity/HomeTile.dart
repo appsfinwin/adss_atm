@@ -13,10 +13,10 @@ class _HomeTileState extends State<HomeTile> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: (MediaQuery.of(context).size.height)/3.5,
+      height: (MediaQuery.of(context).size.height)/4,
 
       decoration: BoxDecoration(
-          //color: Colors.green.shade50,
+
           borderRadius: BorderRadius.all(Radius.circular(20),
           )
       ),
@@ -27,17 +27,14 @@ class _HomeTileState extends State<HomeTile> {
           Expanded(
             child: Container(
               width: double.infinity,
-              // decoration:  BoxDecoration(
-              //     gradient: LinearGradient(begin: Alignment.topCenter, colors: [
-              //       Colors.green.shade50,
-              //       Colors.green.shade50,
-              //       Colors.green.shade50,
-              //       Colors.green.shade50,
-              //     ]),
-              //
-              //
-              //     borderRadius:  BorderRadius.all(Radius.circular(20))
-              // ),
+              decoration:  BoxDecoration(
+                  gradient: LinearGradient(begin: Alignment.topCenter, colors: [
+                    Colors.green.shade50,
+                    Colors.white,
+                  ]),
+
+
+                  borderRadius:  BorderRadius.all(Radius.circular(20))),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -50,7 +47,7 @@ class _HomeTileState extends State<HomeTile> {
                         Text(
                           "Good Morning",
                           style: TextStyle(
-                              color: Colors.white,
+                              color: Colors.black,
                               fontSize: 18,
                               fontStyle: FontStyle.normal,
                               fontFamily: 'monsterat'),
@@ -61,7 +58,7 @@ class _HomeTileState extends State<HomeTile> {
                         Text(
                           "Leslin Antony ",
                           style: TextStyle(
-                              color: Colors.white,
+                              color: Colors.black,
                               fontSize: 30,
                               fontFamily: 'Fredoka'),
                         ),
@@ -72,7 +69,7 @@ class _HomeTileState extends State<HomeTile> {
                             Text(
                               "Current Balance",
                               style: TextStyle(
-                                  color: Colors.white,
+                                  color: Colors.black,
                                   fontSize: 17,
                                   fontFamily: 'monsterat'),
                             ),
@@ -83,7 +80,7 @@ class _HomeTileState extends State<HomeTile> {
                                 Text(
                                   "2598.35 ",
                                   style: TextStyle(
-                                      color: Colors.white,
+                                      color: Colors.black,
                                       fontSize: 30,
                                       fontFamily: 'Fredoka'),
                                 ),
@@ -92,7 +89,7 @@ class _HomeTileState extends State<HomeTile> {
                                   child: Text(
                                     "Rupees ",
                                     style: TextStyle(
-                                        color: Colors.white,
+                                        color: Colors.black,
                                         fontSize: 15,
                                         fontFamily: 'Fredoka'),
                                   ),

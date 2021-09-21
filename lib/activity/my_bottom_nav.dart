@@ -14,6 +14,8 @@ class _MyBottomNavBarState extends State<MyBottomNavBar> {
   @override
   Widget build(BuildContext context) {
     return Container(
+
+
       padding: EdgeInsets.only(
         left: kDefaultPadding * 2,
         right: kDefaultPadding * 2,
@@ -21,80 +23,79 @@ class _MyBottomNavBarState extends State<MyBottomNavBar> {
       ),
       height: 60,
       decoration: BoxDecoration(
-        color: Colors.white,
-        boxShadow: [
-          BoxShadow(
-            offset: Offset(0, -10),
-            blurRadius: 35,
-            color: kPrimaryColor.withOpacity(0.38),
-          ),
-        ],
+        color: kBackgroundColor,
+        // boxShadow: [
+        //   BoxShadow(
+        //     offset: Offset(0, -10),
+        //     blurRadius: 150,
+        //     color: kPrimaryColor.withOpacity(0.38),
+        //   ),
+        // ],
       ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: <Widget>[
-          Container(
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: InkWell(
-                child: Image(
-                  image:AssetImage(
-                    (index==0) ? 'assets/icons/home_active.png' : 'assets/icons/home.png',),
+      child: Container(
+        // width:MediaQuery.of(context).size.width ,
+        // height: double.infinity,
+
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+            Container(
+              width: 60,
+              height: 60,
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: IconButton(
+                  icon:Icon(Icons.home,),
+                  color: (index==0) ? Colors.green : Colors.black,
+                  onPressed: (){
+                    setState(() {
+                      index=0;
+                    });
+                  },
 
                 ),
-                onTap: () {
-
-                  setState(() {
-                    index=0;
-                  });
-
-                },
               ),
             ),
 
-          ),
-
-          Container(
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: InkWell(
-                child: Image(
-                  image:AssetImage(
-                    (index==1) ? 'assets/icons/card_active.png' : 'assets/icons/card.png',),
+            Container(
+              width: 60,
+              height: 60,
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: IconButton(
+                  icon:Icon(Icons.credit_card,),
+                  color: (index==2) ? Colors.green : Colors.black,
+                  onPressed: (){
+                    setState(() {
+                      index=1;
+                    });
+                  },
 
                 ),
-                onTap: () {
-
-                  setState(() {
-                    index=1;
-                  });
-
-                },
               ),
             ),
 
-          ),
-          Container(
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: InkWell(
-                child: Image(
-                  image:AssetImage(
-                    (index==2) ? 'assets/icons/profile_active.png' : 'assets/icons/profile.png',),
+            Container(
+              width: 60,
+              height: 60,
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: IconButton(
+                  icon:Icon(Icons.person,),
+                  color: (index==0) ? Colors.green : Colors.black,
+                  onPressed: (){
+                    setState(() {
+                      index=2;
+                    });
+                  },
 
                 ),
-                onTap: () {
-
-                  setState(() {
-                    index=2;
-                  });
-
-                },
               ),
             ),
 
-          ),
-        ],
+
+          ],
+        ),
       ),
     );
   }
