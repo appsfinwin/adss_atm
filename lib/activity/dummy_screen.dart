@@ -18,69 +18,39 @@ class _DummyScreenState extends State<DummyScreen> {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
-      bottomNavigationBar:
-      MyBottomNavBar(),
-      appBar: AppBar(
-        backgroundColor: kBackgroundColor,
-        elevation: 1,
-        centerTitle: true,
-        title: Text('account',
-        textAlign: TextAlign.center,
-        style: ApptextStyle.statementNameStyle,
-        ),
+                body: Container(
+                  margin: EdgeInsets.only(top: 8),
+                  child: ListView(
+                    physics: ClampingScrollPhysics(),
+                    children: [
+                      Container(
+                        margin: EdgeInsets.only(left:16,right: 16,top:16),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            GestureDetector(
+                                child: Icon(Icons.menu),
+                              onTap: (){
+                                  print("on tap");
+                              },
 
-      ),
-      resizeToAvoidBottomInset: false,
-      body: SingleChildScrollView(
-        physics: ClampingScrollPhysics(),
-        child: Container(
-
-          width: double.infinity,
-          decoration: BoxDecoration(
-              gradient: LinearGradient(
-                  begin: Alignment.topCenter, colors: [
-                Colors.green.shade50,
-                Colors.green.shade50,
-
-              ])),
-
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-
-                HomeTile(),
-                SizedBox(
-                  height: 15,
+                            ),
+                            Container(
+                              height: 50,
+                              width: 50,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10),
+                                image: DecorationImage(
+                                  image: AssetImage('assets/icons/profile.png')
+                                )
+                              ),
+                            )
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
                 ),
-                Text(
-                  "Recent Transactions",
-                  style: ApptextStyle.BODY_TEXT,
-                ),
-                SizedBox(
-                  height: 15,
-                ),
-
-                ListView.separated(
-                    itemCount: myTransactions.length,
-                    shrinkWrap: true,
-                    physics: NeverScrollableScrollPhysics(),
-                    separatorBuilder: (context, index) {
-                      return SizedBox(
-                        height: 10,
-                      );
-                    },
-                    itemBuilder: (context, index) {
-                      return TransactionCard(transaction: myTransactions[index]);
-                    })
-
-              ],
-
-            ),
-          ),
-        ),
-      ),
     );
   }
 }
