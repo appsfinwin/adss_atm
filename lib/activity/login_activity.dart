@@ -4,6 +4,7 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:login/activity/instagram_home.dart';
 
 import '../colors.dart';
+import '../constants.dart';
 
 class LoginActivity extends StatefulWidget {
   const LoginActivity({Key? key}) : super(key: key);
@@ -61,7 +62,7 @@ class _LoginActivityState extends State<LoginActivity> {
                             style: TextStyle(
                                 color: Colors.black,
                                 fontSize: 40,
-                                fontFamily: 'Fredoka'),
+                                fontFamily: 'merri'),
                           ),
                           SizedBox(
                             height: 7,
@@ -71,7 +72,7 @@ class _LoginActivityState extends State<LoginActivity> {
                             style: TextStyle(
                                 color: Colors.black,
                                 fontSize: 18,
-                                fontFamily: 'Fredoka'),
+                                fontFamily: 'merri'),
                           )
                         ],
                       ),
@@ -84,13 +85,13 @@ class _LoginActivityState extends State<LoginActivity> {
                             TextFormField(
                               controller: _usernameController,
                               style: TextStyle(
-                                fontFamily: 'Fredoka',
+                                fontFamily: 'merri',
                                 color: Colors.grey.shade900,
                               ),
                               decoration: InputDecoration(
                                   labelText: 'Username',
                                   labelStyle: TextStyle(
-                                      fontFamily: 'Fredoka',
+                                      fontFamily: 'merri',
                                       color: Colors.grey.shade400,
                                       fontWeight: FontWeight.w100),
                                   focusedBorder: UnderlineInputBorder(
@@ -106,13 +107,13 @@ class _LoginActivityState extends State<LoginActivity> {
                               obscureText: hidePassword,
                               controller: _passwordController,
                               style: TextStyle(
-                                fontFamily: 'Fredoka',
+                                fontFamily: 'merri',
                                 color: Colors.grey.shade900,
                               ),
                               decoration: InputDecoration(
                                   labelText: 'Password',
                                   labelStyle: TextStyle(
-                                      fontFamily: 'Fredoka',
+                                      fontFamily: 'merri',
                                       color: Colors.grey.shade400,
                                       fontWeight: FontWeight.w100),
                                   focusedBorder: UnderlineInputBorder(
@@ -146,7 +147,7 @@ class _LoginActivityState extends State<LoginActivity> {
                                 child: Text(
                                   'Forgot Password',
                                   style: TextStyle(
-                                      fontFamily: 'Fredoka',
+                                      fontFamily: 'merri',
                                       fontWeight: FontWeight.bold,
                                       decoration: TextDecoration.underline),
                                 ),
@@ -235,6 +236,46 @@ class signUpButton extends StatelessWidget {
   }
 }
 
+class Button extends StatefulWidget {
+  final VoidCallback? onPressed;
+  final String buttonText;
+  const Button({Key? key, this.onPressed, required this.buttonText}) : super(key: key);
+
+  @override
+  _ButtonState createState() => _ButtonState();
+}
+
+class _ButtonState extends State<Button> {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+
+
+      child: TextButton(
+        style:TextButton.styleFrom(
+          backgroundColor:kPrimaryColor,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(Radius.circular(30)),
+          ),
+
+        ),
+
+        onPressed:widget.onPressed,
+        child: Text(
+          widget.buttonText,
+          style: TextStyle(
+              color: Colors.white,
+              fontWeight: FontWeight.bold,
+            fontSize: 19,
+            fontFamily: 'merri'
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+
 
 class loginButton extends StatelessWidget {
   const loginButton({
@@ -291,7 +332,7 @@ class loginButton extends StatelessWidget {
           child: Center(
             child: Text(
               'LOGIN',
-              style: TextStyle(color: Colors.white, fontFamily: 'Fredoka'),
+              style: TextStyle(color: Colors.white, fontFamily: 'merri'),
             ),
           ),
         ),

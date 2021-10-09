@@ -60,7 +60,7 @@ class _HomeTileState extends State<HomeTile> {
                           style: TextStyle(
                               color: Colors.black,
                               fontSize: 30,
-                              fontFamily: 'Fredoka'),
+                              fontFamily: 'merri'),
                         ),
                         SizedBox(height:25,),
                         Column(
@@ -82,7 +82,7 @@ class _HomeTileState extends State<HomeTile> {
                                   style: TextStyle(
                                       color: Colors.black,
                                       fontSize: 30,
-                                      fontFamily: 'Fredoka'),
+                                      fontFamily: 'merri'),
                                 ),
                                 Padding(
                                   padding: const EdgeInsets.only(bottom: 2),
@@ -91,7 +91,7 @@ class _HomeTileState extends State<HomeTile> {
                                     style: TextStyle(
                                         color: Colors.black,
                                         fontSize: 15,
-                                        fontFamily: 'Fredoka'),
+                                        fontFamily: 'merri'),
                                   ),
                                 )
                               ],

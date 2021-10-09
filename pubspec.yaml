@@ -37,7 +37,10 @@ dependencies:
   fluttertoast: ^8.0.8
   toast: ^0.1.5
   font_awesome_flutter: ^9.1.0
-
+  bottom_navy_bar: ^6.0.0
+  salomon_bottom_bar: ^3.1.0
+  grouped_list: ^4.1.0
+  flutter_switch: ^0.3.2
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -97,6 +100,10 @@ flutter:
     - family: monsterat
       fonts:
         - asset: assets/Montserrat-Regular.ttf
+
+    - family: merri
+      fonts:
+        - asset: assets/MerriweatherSans-VariableFont_wght.ttf
 
     - family: Poppins
       fonts:
